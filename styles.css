@@ -1,0 +1,194 @@
+/* =============================
+   CSS RESET & VARIABLES
+   ============================= */
+:root {
+  --background-color: #f9f6f2;
+  --main-text-color: #343434;
+  --header-height: 100vh;
+  --nav-height: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background: var(--background-color);
+  color: var(--main-text-color);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  text-align: center;
+}
+
+/* =============================
+   HEADER
+   ============================= */
+header {
+  height: var(--header-height);
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: var(--nav-height);
+}
+
+.first-image {
+  display: block;
+  object-fit: contain;
+  max-height: 60vh;
+  max-width: 100vw;
+  border: solid #f9f6f4 0.5rem;
+}
+
+
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5vh;
+  color: var(--main-text-color);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+/* =============================
+   NAVIGATION
+   ============================= */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--main-text-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--main-text-color);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--main-color);
+}
+
+/* =============================
+   MAIN SECTIONS
+   ============================= */
+section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--main-color);
+}
+
+.rsvp-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 2px solid #333;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.rsvp-button:hover {
+  background: #333;
+  color: white;
+}
+
+.dress-colors {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.color-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+/* =============================
+   FOOTER
+   ============================= */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.875rem;
+  background: #eee;
+}
+
+/* =============================
+   RESPONSIVE DESIGN
+   ============================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: white;
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* =============================
+   GOOGLE MAP STYLING (OPTIONAL)
+   ============================= */
+iframe.google-map {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 2rem;
+}
