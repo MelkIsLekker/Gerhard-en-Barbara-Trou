@@ -6,14 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.classList.toggle('active');
     menuToggle.classList.toggle('active');
 
-    // Update ARIA attribute for accessibility
     const expanded = menuToggle.classList.contains('active');
     menuToggle.setAttribute('aria-expanded', expanded);
   }
 
   menuToggle.addEventListener('click', toggleMenu);
 
-  // Optional: close menu when clicking a link (improves UX on mobile)
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
@@ -22,15 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  //
-  
-
-
-  //
   const countdownEl = document.getElementById("countdown");
-
-  // Replace with your actual wedding date & time
-  const weddingDate = new Date("2025-12-20T15:00:00");
+  const weddingDate = new Date("2026-01-05T15:00:00");
 
   function updateCountdown() {
     const now = new Date();
@@ -51,13 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  updateCountdown(); // run once immediately
-  setInterval(updateCountdown, 1000); // update every second
-});
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 
-const circles = document.querySelectorAll('.color-circle');
-
-  // Skep die popup
+  const circles = document.querySelectorAll('.color-circle');
   const popup = document.createElement('div');
   popup.className = 'color-popup';
   popup.innerHTML = `
@@ -71,10 +59,9 @@ const circles = document.querySelectorAll('.color-circle');
   const nameEl = popup.querySelector('.color-name');
   const closeBtn = popup.querySelector('.close-popup');
 
-  // Wys popup wanneer 'n sirkel gekliek word
   circles.forEach(circle => {
     circle.addEventListener('click', (e) => {
-      e.stopPropagation(); // voorkom dat dit onmiddellik toe maak
+      e.stopPropagation();
       const color = circle.getAttribute('data-color');
       const name = circle.getAttribute('data-name');
 
@@ -84,22 +71,14 @@ const circles = document.querySelectorAll('.color-circle');
     });
   });
 
-  // Sluit popup wanneer 'sluit' knoppie gekliek word
   closeBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     popup.style.display = 'none';
   });
 
-  // Sluit popup wanneer enige ander plek gekliek word
   document.addEventListener('click', (e) => {
     if (!popup.contains(e.target)) {
       popup.style.display = 'none';
     }
   });
-
-function toggleMenu(el) {
-  const navLinks = document.querySelector('.nav-links');
-  el.classList.toggle('active'); // toggle X-burger
-  navLinks.classList.toggle('active'); // show/hide nav
-}
-
+});
