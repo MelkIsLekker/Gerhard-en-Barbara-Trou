@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  //
+  
 
 
   //
@@ -100,3 +102,4 @@ function toggleMenu(el) {
   el.classList.toggle('active'); // toggle X-burger
   navLinks.classList.toggle('active'); // show/hide nav
 }
+
