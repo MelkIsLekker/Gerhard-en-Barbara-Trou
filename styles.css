@@ -82,6 +82,7 @@ header h1 {
   transition: transform 0.3s ease;
 }
 
+/*bouncy*/
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0); 
